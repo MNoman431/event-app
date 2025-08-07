@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { store } from "./Redux/Store";
 import { Provider } from 'react-redux'
+import "antd/dist/reset.css"; 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

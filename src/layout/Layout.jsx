@@ -61,6 +61,7 @@ const Profile = lazy(() => import("../shared/components/Profile"));
 // ✅ ServicesList Import
 import ServicesList from "../client/pages/ServicesList";
 import VendorDetailPage from '../vendor/pages/VendorDetailPage';
+import MyCart from '../client/pages/MyCart';
 
 const Layout = () => {
     return (
@@ -75,8 +76,9 @@ const Layout = () => {
                     {/* ✅ New Route for Services */}
                     <Route path="/services/:type" element={<ServicesList />} />
                     <Route path="/service/:id" element={<VendorDetailPage />} />
+                    <Route path="/mycart" element={<MyCart />} />
 
-                    
+
 
                     <Route element={<ProtectRoutes />} >
                         <Route path="/*" element={<ClientRouting />} />

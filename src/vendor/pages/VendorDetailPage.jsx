@@ -354,20 +354,23 @@ import {
   deleteServiceThunk,
   updateServiceThunk,
 } from "../../Redux/thunks/VendorRegisterThunk";
+import AddtoCartDraw from "../../client/draw/AddtoCartDraw";
+
 
 const VendorDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
-
+  
   // 🔎 Agar URL /vendor/... se start hota hai to vendor view hai, warna client view
   const isVendorView = location.pathname.startsWith("/vendor");
-
+  
   const { serviceDetail, loading, error } = useSelector(
     (state) => state.vendorRegister
   );
-
+  
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -682,7 +685,25 @@ const VendorDetailPage = () => {
               Delete
             </button>
           </div>
+          
         )}
+        {!isVendorView && (
+  <div className="mt-6">
+    <button
+      onClick={() => setDrawerOpen(true)}
+      className="bg-yellow-600 text-white px-4 py-2 rounded"
+    >
+      Add to Cart
+    </button>
+  </div>
+)}
+
+<AddtoCartDraw
+  open={drawerOpen}
+  onClose={() => setDrawerOpen(false)}
+  service={serviceDetail}
+/>
+
       </div>
     </div>
   );
