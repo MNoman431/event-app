@@ -1,6 +1,6 @@
 
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchServicesByType } from "../thunks/clientServicesThunk";
+import { fetchServicesByType } from "../thunks/ClientServicesThunk";
 // import { fetchServicesByType } from "../thunks/ClientServicesThunk";
 
 const ClientServicesSlice = createSlice({
