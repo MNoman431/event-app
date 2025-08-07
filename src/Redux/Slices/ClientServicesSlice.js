@@ -1,8 +1,9 @@
-// src/redux/slices/clientServicesSlice.js
+
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchServicesByType } from "../thunks/clientServicesThunk";
+// import { fetchServicesByType } from "../thunks/ClientServicesThunk";
 
-const clientServicesSlice = createSlice({
+const ClientServicesSlice = createSlice({
   name: "clientServices",
   initialState: {
     loading: false,
@@ -28,4 +29,4 @@ const clientServicesSlice = createSlice({
   },
 });
 
-export default clientServicesSlice.reducer;
+export default ClientServicesSlice.reducer;
